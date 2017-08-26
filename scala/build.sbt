@@ -14,7 +14,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.scala-logging" %% "scala-logging" % "3.7.1",
   "org.scalactic" %% "scalactic" % "3.0.1",
   "org.scalatest" %% "scalatest" % "3.0.1" % "test",
-  "org.typelevel" %% "cats" % "0.9.0"
+  "org.typelevel" %% "cats-core" % "1.0.0-MF"
 ).map(_.exclude("org.slf4j", "slf4j-log4j12"))
 
 lazy val scalaCoding = project.in(file(".")).settings()
