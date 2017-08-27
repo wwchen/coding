@@ -5,6 +5,7 @@ import org.scalatest.{FlatSpec, Matchers, WordSpec}
 class RomanIntConverterSpec extends FlatSpec with Matchers {
   import RomanIntConverter._
   "Ints to Roman" should "convert single digit" in {
+      1.asRoman should be ("I")
       2.asRoman should be ("II")
       4.asRoman should be ("IV")
       5.asRoman should be ("V")

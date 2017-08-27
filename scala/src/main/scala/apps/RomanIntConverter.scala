@@ -10,6 +10,7 @@ object RomanIntConverter {
 
     def asRoman(pow: Int): String = {
       assert(num < 10)
+      // 10, 2
       val one  = roman(pow * 2 - 2)
       val five = roman(pow * 2 - 1)
       val ten  = roman(pow * 2)
