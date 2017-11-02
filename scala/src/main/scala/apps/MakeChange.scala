@@ -19,4 +19,20 @@ class MakeChange {
       combos
     }
   }
+
+  def makeChange(value: Int, denominations: Seq[Int]): Map[Int, Int] = {
+    val denoms = denominations.sortWith(_ > _)
+    println("Denominations: " + denoms.mkString(", "))
+    val changes = denoms.indices.map { i =>
+      val ddenoms = denoms.drop(i)
+      ddenoms.foldLeft((value, Map.empty[Int, Int])) { (t, d) =>
+        (t._1 % d, t._2 ++ Map(d -> t._1 / d))
+      }._2.filter(_._2 > 0)
+    }
+    changes.sortWith(_.values.sum < _.values.sum).head
+  }
+
+  makeChange(43, Seq(25, 10, 5, 1))
+  makeChange(40, Seq(25, 20, 10, 5, 1))
+  makeChange(53, Seq(25, 20, 10, 5, 1))
 }
