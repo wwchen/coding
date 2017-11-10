@@ -41,3 +41,9 @@ println(findRotation(Seq(5,6,1,2,3)) == 2)
 println(findRotation(Seq(5,6,7,1,2,3)) == 3)
 println(findRotation(Seq(5,6,7,8,1,2,3)) == 4)
 println(findRotation(Seq(5,6,7,8,1,2)) == 4)
+
+val i = scala.io.Source.fromFile("/Users/wchen/git/coding/scala/test").getLines()
+while(i.hasNext) {
+  println(i.next())
+  Thread.sleep(1000)
+}

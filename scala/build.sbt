@@ -18,9 +18,11 @@ libraryDependencies ++= Seq(
   "org.typelevel" %% "cats-core" % "1.0.0-MF",
   "io.chymyst" %% "chymyst-core" % "latest.integration",
   "com.twitter" %% "util-collection" % "7.0.0",
-  "org.typelevel" %% "cats-core" % "1.0.0-MF"
+  "org.typelevel" %% "cats-core" % "1.0.0-MF",
+  "commons-io" % "commons-io" % "2.6"
 ).map(_.exclude("org.slf4j", "slf4j-log4j12"))
 
 lazy val scalaCoding = project.in(file(".")).settings()
 
 addCommandAlias("dining", "runMain apps.DiningPhilosophers")
+addCommandAlias("lyft", "runMain lyft.VersionedKeyValueStoreRunner")

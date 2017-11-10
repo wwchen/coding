@@ -8,7 +8,7 @@ object EquationEvaluator {
   case object Multiply
 
   case object Add extends Operator {
-    override def perform(one: Int, two: Int): Int = one + two
+    def perform(one: Int, two: Int): Int = one + two
   }
 
   /**
@@ -40,8 +40,6 @@ object EquationEvaluator {
       }
       (tokens, if(buffer.size == 3) Seq.empty else buffer)
     }
-
-    Map().get
 
     afterAdd._1.head.toInt
   }
